@@ -1,6 +1,6 @@
 \! cls
 
--- UNIQUE / NOT NULL / DEFAULT
+-- PW / Verschlüsselung
 
 -- DB anlegen, falls noch nicht existent
 CREATE DATABASE IF NOT EXISTS boo;
