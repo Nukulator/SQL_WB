@@ -25,9 +25,9 @@
 
 SELECT 
     id,
-    name as "Voller Name",
-    email as Mailadresse,
-    city as Stadt
+    name    as "Voller Name",
+    email   as Mailadresse,
+    city    as Stadt
 FROM languages.contacts
 WHERE city LIKE "%furt"
 ORDER BY name DESC
