@@ -1,12 +1,21 @@
 \! cls
 
+
 --  01 SELECT
 
+-- SHOW VARIABLES LIKE 'character_set%';
+SHOW VARIABLES LIKE 'collation%';
+
 -- Vorbereitung
-DROP TABLE IF EXISTS boo.contacts;
+
+CREATE DATABASE languages
+  CHARACTER SET utf8mb4
+  COLLATE utf8mb4_unicode_ci;
+
+DROP TABLE IF EXISTS languages.contacts;
 
 -- 1. Tabelle erstellen mit AUTO_INCREMENT und PRIMARY KEY
-CREATE TABLE IF NOT EXISTS boo.contacts (
+CREATE TABLE IF NOT EXISTS languages.contacts (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100),
     address VARCHAR(255),
@@ -17,10 +26,12 @@ CREATE TABLE IF NOT EXISTS boo.contacts (
     city VARCHAR(100)
 );
 
-DESCRIBE boo.contacts;
+-- SHOW CREATE Table boo.contacts;
+
+DESCRIBE languages.contacts;
 
 -- 2. 50 Datensätze einfügen (id wird automatisch vergeben)
-INSERT INTO boo.contacts (name, address, phone, email, age, state, city) VALUES
+INSERT INTO languages.contacts (name, address, phone, email, age, state, city) VALUES
 ('Sophia Müller', 'Musterstraße 1', '030/123456', 'sophia.mueller@example.de', 25, 'Berlin', 'Berlin'),
 ('Ahmet Yilmaz', 'Hauptstraße 2', '0221/987654', 'ahmet.yilmaz@example.de', 32, 'Nordrhein-Westfalen', 'Köln'),
 ('Leonie Schmidt', 'Bahnhofstraße 3', '089/111222', 'leonie.schmidt@example.de', 28, 'Bayern', 'München'),
@@ -72,4 +83,4 @@ INSERT INTO boo.contacts (name, address, phone, email, age, state, city) VALUES
 ('Tarek Bouzid', 'Rathausplatz 49', '0711/222333', 'tarek.bouzid@example.de', 30, 'Baden-Württemberg', 'Stuttgart'),
 ('Melis Erdem', 'Hauptplatz 50', '040/333444', 'melis.erdem@example.de', 25, 'Hamburg', 'Hamburg');
 
-SELECT * FROM boo.contacts;
+SELECT * FROM languages.contacts;
